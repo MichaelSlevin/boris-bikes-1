@@ -22,3 +22,10 @@ Object | Messages
 Person | Use, See
 Docking Station | Release
 Bike | Working
+
+
+Objects will be able to interact with each other using the messages described below:
+* Person -- Use --> Bike
+* Person -- See --> Bike -- Working --> True/False
+* Docking Station -- Release --> Bike
+* Bike -- Working --> True/False
