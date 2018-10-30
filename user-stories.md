@@ -1,3 +1,5 @@
+## User Stories
+
 This document will look at user stories, and how to break them down into useful information. 
 
 >As a person,
@@ -9,7 +11,9 @@ This document will look at user stories, and how to break them down into useful 
 >I'd like to see if a bike is working
 
 The Nouns in the above stories are: Person, Docking Station, Bike
+
 The Verbs in the above stories are: Use, release, see, working
+
 
 The table below breaks the user stories down into Objects and Messages
 
