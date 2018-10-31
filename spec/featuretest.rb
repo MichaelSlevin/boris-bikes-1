@@ -29,3 +29,5 @@ rescue
 else
   p "test failed, no error raised when docking 2nd bike"
 end
+p "Default cap for dockinS should be 20"
+p DockingStation::DEFAULT_CAPACITY
