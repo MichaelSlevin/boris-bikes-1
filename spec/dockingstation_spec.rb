@@ -16,4 +16,5 @@ describe DockingStation do
     DockingStation::DEFAULT_CAPACITY.times { full_ds.dock(Bike.new) }
     expect(full_ds.bikes.size).to eq(DockingStation::DEFAULT_CAPACITY)
   end
+  it { expect(DockingStation.new(10).capacity).to eq(10) }
 end

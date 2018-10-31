@@ -31,3 +31,8 @@ else
 end
 p "Default cap for dockinS should be 20"
 p DockingStation::DEFAULT_CAPACITY
+
+p "Checking that capacity can be set on instantiation of docking station"
+puts DockingStation.new(5).capacity == 5
+p "Checking default capacity is 20"
+puts DockingStation.new.capacity == 20
