@@ -18,3 +18,14 @@ rescue
 else
   p "test failed, no error raised"
 end
+
+p "checks for error when docking too many bikes"
+begin
+  full_ds = DockingStation.new
+  full_ds.dock(Bike.new)
+  full_ds.dock(Bike.new)
+rescue
+  p "error raised when docking 2nd bike"
+else
+  p "test failed, no error raised when docking 2nd bike"
+end
