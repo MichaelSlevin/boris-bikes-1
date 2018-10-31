@@ -1,6 +1,7 @@
 require "./lib/bike.rb"
 
 class DockingStation
+
   attr_reader :bikes
   attr_reader :capacity
 
@@ -16,15 +17,20 @@ class DockingStation
     @bikes.pop
   end
 
-  def dock(bike)
+  def dock(bike, works=true)
     fail 'Docking station full' if full?
+    bike.working = false unless works
     @bikes.push(bike)
   end
+
   private
-    def empty?
-      return @bikes.empty?
-    end
-    def full?
-      return @bikes.size >= @capacity
-    end
+
+  def empty?
+    return @bikes.empty?
+  end
+
+  def full?
+    return @bikes.size >= @capacity
+  end
+
 end

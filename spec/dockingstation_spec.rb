@@ -5,6 +5,7 @@ describe DockingStation do
   it { expect(dockingstation).to respond_to(:release_bike) }
   it { expect(dockingstation).to respond_to(:bikes) }
   it { is_expected.to respond_to(:dock).with(1).argument }
+  it { is_expected.to respond_to(:dock).with(2).argument }
   it { expect{ DockingStation.new.release_bike }.to raise_error 'No bikes docked' }
   it "Cannot dock a bike when the docking station is at capacity" do
     empty_ds = DockingStation.new
@@ -15,6 +16,12 @@ describe DockingStation do
     full_ds = DockingStation.new
     DockingStation::DEFAULT_CAPACITY.times { full_ds.dock(Bike.new) }
     expect(full_ds.bikes.size).to eq(DockingStation::DEFAULT_CAPACITY)
+  end
+  it do
+    bike = Bike.new
+    ds = DockingStation.new
+    ds.dock(bike, false)
+    expect(bike.working).to eq(false)
   end
   it { expect(DockingStation.new(10).capacity).to eq(10) }
 end

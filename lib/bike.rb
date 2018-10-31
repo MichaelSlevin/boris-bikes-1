@@ -1,8 +1,10 @@
 require "./lib/dockingstation.rb"
 
 class Bike
-  def working?
-    true
+  attr_accessor :working
+
+  def initialize
+    @working = true
   end
 
   def is_in(station_to_check)
