@@ -6,6 +6,6 @@ class Bike
   end
 
   def is_in(station_to_check)
-    station_to_check.bikes.include? self
+    station_to_check.bike == self
   end
 end

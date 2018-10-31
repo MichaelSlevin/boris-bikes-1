@@ -1,18 +1,14 @@
 require "./lib/bike.rb"
 
 class DockingStation
-  attr_reader :bikes
-
-  def initialize
-    @bikes = []
-  end
+  attr_reader :bike
 
   def release_bike
-    Bike.new
+    fail 'No bikes docked' unless @bike
+    @bike
   end
 
   def dock(bike)
-    @bikes.push(bike)
-    p bikes
+    @bike = bike
   end
 end
