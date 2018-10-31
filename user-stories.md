@@ -1,6 +1,6 @@
 ## User Stories
 
-This document will look at user stories, and how to break them down into useful information. 
+This document will look at user stories, and how to break them down into useful information.
 
 >As a person,
 >So that I can use a bike,
@@ -20,8 +20,8 @@ The table below breaks the user stories down into Objects and Messages
 Object | Messages
 --- | ---
 Person | Use, See
-Docking Station | Release
-Bike | Working
+Docking Station | Release, bikes
+Bike | Working, Dock
 
 
 Objects will be able to interact with each other using the messages described below:
@@ -29,3 +29,4 @@ Objects will be able to interact with each other using the messages described be
 * Person -- See --> Bike -- Working --> True/False
 * Docking Station -- Release --> Bike
 * Bike -- Working --> True/False
+* Bike -- Dock --> DockingStation
