@@ -26,7 +26,7 @@ class DockingStation
 
   def dock(bike, works=true)
     fail 'Docking station full' if full?
-    bike.working = false unless works
+    bike.working = works
     @bikes.push(bike)
   end
 
