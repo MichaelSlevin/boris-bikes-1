@@ -14,7 +14,14 @@ class DockingStation
 
   def release_bike
     fail 'No bikes docked' if empty?
-    @bikes.pop
+    fail 'Can\'t release broken bikes' if @bikes.select { |b| b.working }.size == 0
+    @bikes.size.times do
+      if @bikes[0].working
+        return @bikes.shift
+      else
+        @bikes.rotate!
+      end
+    end
   end
 
   def dock(bike, works=true)
