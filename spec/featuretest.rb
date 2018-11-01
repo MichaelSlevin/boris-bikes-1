@@ -36,3 +36,24 @@ p "Checking that capacity can be set on instantiation of docking station"
 puts DockingStation.new(5).capacity == 5
 p "Checking default capacity is 20"
 puts DockingStation.new.capacity == 20
+
+p "Checking that broken bike can't be released from a docking station"
+begin
+  empty_ds = DockingStation.new
+  empty_ds.dock(Bike.new, false)
+  empty_ds.release_bike
+rescue
+  p "Can't release the broken bike"
+else
+  p "It gave me a broken bike"
+end
+
+p "Checking that a working bike can be released from a docking station that has
+a broken bike"
+
+empty_ds = DockingStation.new
+working_bike = Bike.new
+breaking_bike = Bike.new
+empty_ds.dock(breaking_bike, false)
+empty_ds.dock(working_bike)
+p empty_ds.release_bike
